@@ -1,0 +1,18 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}CRUD Edit{% endblock %}
+
+{% block body %}
+    <div class="container mt-5">
+        <div class="row justify-content-center">
+            <div class="col-lg-10">
+                <div class="card shadow-sm border-0 bg-success bg-opacity-50 fw-bold">
+                    <div class="card-header bg-secondary text-white">
+                        <h4 class="mb-0 text-center">Edit User Registration Form</h4>
+                    </div>
+                    {{ include('pages/commonForm.html.twig') }}
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

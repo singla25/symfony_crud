@@ -1,0 +1,48 @@
+{{ form_start(form, {'attr': {'class': 'row g-3'}}) }}
+
+<div class="container py-5">
+    <div class="row justify-content-center">
+        <div class="col-lg-8">
+            <div class="card border-0 shadow-lg rounded-4">
+                <div class="card-header bg-gradient bg-success text-white rounded-top-4 text-center py-3">
+                    <h3 class="mb-0">User Information Form</h3>
+                </div>
+                <div class="card-body p-5 bg-white">
+
+                    <div class="row g-4">
+                        <div class="col-md-6">
+                            <label class="form-label fw-bold">Name</label>
+                            {{ form_widget(form.name, {'attr': {'class': 'form-control border-0 border-bottom rounded-0 shadow-none', 'placeholder': 'Your Name'}}) }}
+                        </div>
+                        <div class="col-md-6">
+                            <label class="form-label fw-bold">Email</label>
+                            {{ form_widget(form.email, {'attr': {'class': 'form-control border-0 border-bottom rounded-0 shadow-none', 'placeholder': 'Your Email'}}) }}
+                        </div>
+                        <div class="col-md-6">
+                            <label class="form-label fw-bold">Age</label>
+                            {{ form_widget(form.age, {'attr': {'class': 'form-control border-0 border-bottom rounded-0 shadow-none', 'placeholder': 'Your Age'}}) }}
+                        </div>
+                        <div class="col-md-6">
+                            <label class="form-label fw-bold">Address</label>
+                            {{ form_widget(form.address, {'attr': {'class': 'form-control border-0 border-bottom rounded-0 shadow-none', 'placeholder': 'Your Address'}}) }}
+                        </div>
+                        <div class="col-md-6">
+                            <label class="form-label fw-bold">City</label>
+                            {{ form_widget(form.city, {'attr': {'class': 'form-control border-0 border-bottom rounded-0 shadow-none', 'placeholder': 'Your City'}}) }}
+                        </div>
+                        <div class="col-md-6">
+                            <label class="form-label fw-bold">Pin Code</label>
+                            {{ form_widget(form.pinCode, {'attr': {'class': 'form-control border-0 border-bottom rounded-0 shadow-none', 'placeholder': 'Pin Code'}}) }}
+                        </div>
+                        <div class="col-12 text-center pt-3">
+                            <button type="submit" class="btn btn-success px-5 py-2 rounded-pill fw-bold shadow">Submit</button>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{{ form_end(form) }}

@@ -1,0 +1,64 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}CRUD READ{% endblock %}
+
+{% block body %}
+    <div class="container mt-5">
+        <h2 class="text-center mb-4 fw-bold text-success">Form Details</h2>
+        <div class="card shadow border-0 rounded-4">
+            <div class="card-header bg-success text-white rounded-top-4 text-center">
+                <h4 class="mb-0">Submitted Data</h4>
+            </div>
+            <div class="card-body p-4 bg-white">
+                <div class="row">
+                    <div class="col-12 text-end mb-3">
+                        <a href="{{ path('create') }}" class="btn btn-success px-4 py-2 rounded-pill fw-semibold shadow-sm">
+                            Fill the Form
+                        </a>
+                    </div>
+                    <div class="col-12">
+                        <div class="table-responsive">
+                            <table class="table table-hover align-middle shadow-sm rounded-3 overflow-hidden">
+                                <thead class="table-success text-center">
+                                <tr>
+                                    <th>Id</th>
+                                    <th>Name</th>
+                                    <th>Email</th>
+                                    <th>Age</th>
+                                    <th>Address</th>
+                                    <th>City</th>
+                                    <th>Pin Code</th>
+                                    <th>Action</th>
+                                </tr>
+                                </thead>
+                                <tbody class="text-center">
+                                {% if crud|length > 0 %}
+                                    {% for detail in crud %}
+                                        <tr>
+                                            <td>{{ detail.id }}</td>
+                                            <td>{{ detail.name }}</td>
+                                            <td>{{ detail.email }}</td>
+                                            <td>{{ detail.age }}</td>
+                                            <td>{{ detail.address }}</td>
+                                            <td>{{ detail.city }}</td>
+                                            <td>{{ detail.pinCode }}</td>
+                                            <td>
+                                                <a href="{{ path('edit', {id: detail.id}) }}" class="btn btn-outline-success btn-sm px-3 rounded-pill fw-semibold shadow-sm">Edit</a>
+                                                <a href="{{ path('delete', {id: detail.id}) }}" class="btn btn-outline-danger btn-sm px-3 rounded-pill fw-semibold shadow-sm">Delete</a>
+                                            </td>
+                                        </tr>
+                                    {% endfor %}
+                                {% else %}
+                                    <tr>
+                                        <td colspan="8" class="text-center text-muted">No Data Found</td>
+                                    </tr>
+                                {% endif %}
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
