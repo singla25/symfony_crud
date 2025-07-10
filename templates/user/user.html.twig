@@ -1,0 +1,51 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}User Page{% endblock %}
+
+{% block body %}
+    <div class="container my-5">
+        <h2 class="text-center text-success mb-5 fw-bold">User Page</h2>
+        <h2 class="text-center mb-4 fw-bold text-success">Product Details</h2>
+        <div class="card shadow-lg border-0 rounded-4">
+            <div class="card-body p-4 bg-white">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="table-responsive">
+                            <table class="table table-hover align-middle shadow-sm rounded-3 overflow-hidden">
+                                <thead class="table-success text-center">
+                                <tr>
+                                    <th>Id</th>
+                                    <th>Name</th>
+                                    <th>Description</th>
+                                    <th>Price</th>
+                                    <th>Address</th>
+                                    <th>Photo</th>
+                                </tr>
+                                </thead>
+                                <tbody class="text-center">
+                                {% if products|length > 0 %}
+                                    {% for product in products %}
+                                        <tr>
+                                            <td>{{ product.id }}</td>
+                                            <td>{{ product.name }}</td>
+                                            <td>{{ product.description }}</td>
+                                            <td>{{ product.price }}</td>
+                                            <td>{{ product.address }}</td>
+                                            <td>{{ product.uploadPhotos }}</td>
+                                        </tr>
+                                    {% endfor %}
+                                {% else %}
+                                    <tr>
+                                        <td colspan="7" class="text-center text-muted">No Product Found</td>
+                                    </tr>
+                                {% endif %}
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+

@@ -1,0 +1,38 @@
+{{ form_start(form) }}
+
+<div class="row g-4">
+
+    <div class="col-md-6">
+        <label class="form-label fw-semibold text-secondary">Name</label>
+        {{ form_widget(form.name, {'attr': {'class': 'form-control rounded-3 shadow-sm', 'placeholder': 'Product Name'}}) }}
+    </div>
+
+    <div class="col-md-6">
+        <label class="form-label fw-semibold text-secondary">Price</label>
+        {{ form_widget(form.price, {'attr': {'class': 'form-control rounded-3 shadow-sm', 'placeholder': 'Product Price'}}) }}
+    </div>
+
+    <div class="col-md-6">
+        <label class="form-label fw-semibold text-secondary">Upload Photos</label>
+        {{ form_widget(form.uploadPhotos, {'attr': {'class': 'form-control rounded-3 shadow-sm'}}) }}
+    </div>
+
+    <div class="col-md-6">
+        <label class="form-label fw-semibold text-secondary">Description</label>
+        {{ form_widget(form.description, {'attr': {'class': 'form-control rounded-3 shadow-sm', 'placeholder': 'Product Description'}}) }}
+    </div>
+
+    <div class="col-12">
+        <label class="form-label fw-semibold text-secondary">Address</label>
+        {{ form_widget(form.address, {'attr': {'class': 'form-control rounded-3 shadow-sm', 'rows': '3', 'placeholder': 'Product Address'}}) }}
+    </div>
+
+</div>
+
+<div class="text-center mt-4">
+    <button type="submit" class="btn btn-success px-5 py-2 rounded-pill shadow fw-bold">
+        Submit
+    </button>
+</div>
+
+{{ form_end(form) }}

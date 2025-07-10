@@ -1,0 +1,51 @@
+<h2 class="text-center mb-4 fw-bold text-success">Product Details</h2>
+
+<div class="card shadow-lg border-0 rounded-4">
+    <div class="card-header bg-success text-white rounded-top-4 text-center py-3">
+        <h4 class="mb-0">Submitted Data</h4>
+    </div>
+    <div class="card-body p-4 bg-white">
+        <div class="row">
+            <div class="col-12">
+                <div class="table-responsive">
+                    <table class="table table-hover align-middle shadow-sm rounded-3 overflow-hidden">
+                        <thead class="table-success text-center">
+                        <tr>
+                            <th>Id</th>
+                            <th>Name</th>
+                            <th>Description</th>
+                            <th>Price</th>
+                            <th>Address</th>
+                            <th>Photo</th>
+                            <th>Action</th>
+                        </tr>
+                        </thead>
+                        <tbody class="text-center">
+                        {% if products|length > 0 %}
+                            {% for product in products %}
+                                <tr>
+                                    <td>{{ product.id }}</td>
+                                    <td>{{ product.name }}</td>
+                                    <td>{{ product.description }}</td>
+                                    <td>{{ product.price }}</td>
+                                    <td>{{ product.address }}</td>
+                                    <td>{{ product.uploadPhotos }}</td>
+                                    <td>
+                                        <a href="{{ path('edit&ReadProduct', {id: product.id}) }}" class="btn btn-outline-success btn-sm px-3 rounded-pill fw-semibold shadow-sm">Edit</a>
+                                        <a href="{{ path('deleteProduct', {id: product.id}) }}" class="btn btn-outline-danger btn-sm px-3 rounded-pill fw-semibold shadow-sm">Delete</a>
+                                    </td>
+                                </tr>
+                            {% endfor %}
+                        {% else %}
+                            <tr>
+                                <td colspan="7" class="text-center text-muted">No Product Found</td>
+                            </tr>
+                        {% endif %}
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
