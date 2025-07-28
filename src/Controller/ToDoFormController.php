@@ -11,9 +11,9 @@ use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Attribute\Route;
 
-class MainController extends AbstractController
+class ToDoFormController extends AbstractController
 {
-    #[Route('/', name: 'read')]
+    #[Route('/todoForm', name: 'read')]
     public function read(CRUDRepository $CRUDRepository): Response
     {
         $read = $CRUDRepository->findAll();
