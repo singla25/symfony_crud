@@ -33,8 +33,8 @@ class RegistrationController extends AbstractController
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
-            $user =$register->user;
-            $userDetail =$register->userDetail;
+            $user = $register->user;
+            $userDetail = $register->userDetail;
 
             /** @var string $plainPassword */
             $plainPassword = $form->get('user')->get('plainPassword')->getData();
@@ -43,12 +43,13 @@ class RegistrationController extends AbstractController
             $user->setPassword($userPasswordHasher->hashPassword($user, $plainPassword));
 
             $entityManager->persist($user);
+
             $userDetail->setUserId($user->getId());
             $userDetail->setEmail($user->getEmail());
             $userDetail->setUserType($user->getUserType());
-            $entityManager->flush();
 
             $entityManager->persist($userDetail);
+            $entityManager->flush();
 
             // generate a signed url and email it to the user
             $this->emailVerifier->sendEmailConfirmation('app_verify_email', $user,
