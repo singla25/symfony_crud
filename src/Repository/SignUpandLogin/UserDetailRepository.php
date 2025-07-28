@@ -1,23 +1,23 @@
 <?php
 
-namespace App\Repository;
+namespace App\Repository\SignUpandLogin;
 
-use App\Entity\ProductDetail;
+use App\Entity\LoginAndSignUpEntity\UserDetail;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Doctrine\Persistence\ManagerRegistry;
 
 /**
- * @extends ServiceEntityRepository<ProductDetail>
+ * @extends ServiceEntityRepository<UserDetail>
  */
-class ProductDetailRepository extends ServiceEntityRepository
+class UserDetailRepository extends ServiceEntityRepository
 {
     public function __construct(ManagerRegistry $registry)
     {
-        parent::__construct($registry, ProductDetail::class);
+        parent::__construct($registry, UserDetail::class);
     }
 
     //    /**
-    //     * @return adminPanel[] Returns an array of adminPanel objects
+    //     * @return UserDetail[] Returns an array of UserDetail objects
     //     */
     //    public function findByExampleField($value): array
     //    {
@@ -31,7 +31,7 @@ class ProductDetailRepository extends ServiceEntityRepository
     //        ;
     //    }
 
-    //    public function findOneBySomeField($value): ?adminPanel
+    //    public function findOneBySomeField($value): ?UserDetail
     //    {
     //        return $this->createQueryBuilder('u')
     //            ->andWhere('u.exampleField = :val')

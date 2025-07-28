@@ -1,8 +1,8 @@
 <?php
 
-namespace App\Entity;
+namespace App\Entity\CRUD;
 
-use App\Repository\CRUDRepository;
+use App\Repository\CRUD\CRUDRepository;
 use Doctrine\ORM\Mapping as ORM;
 
 #[ORM\Entity(repositoryClass: CRUDRepository::class)]

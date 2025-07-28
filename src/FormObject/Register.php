@@ -2,8 +2,6 @@
 
 namespace App\FormObject;
 
-use App\Entity\UserDetail;
-
 class Register
 {
     public $user;

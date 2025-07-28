@@ -1,29 +1,26 @@
 <?php
 
-namespace App\Form;
+namespace App\Form\LoginAndSignUpForm;
 
-use App\Entity\ProductDetail;
+use App\FormObject\Register;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 
-class ProductDetailType extends AbstractType
+
+class RegistrationFormType extends AbstractType
 {
     public function buildForm(FormBuilderInterface $builder, array $options): void
     {
         $builder
-            ->add('name')
-            ->add('description')
-            ->add('price')
-            ->add('address')
-            ->add('uploadPhotos')
-        ;
+            ->add('user',UserType::class)
+            ->add('userDetail',UserDetailType::class);
     }
 
     public function configureOptions(OptionsResolver $resolver): void
     {
         $resolver->setDefaults([
-            'data_class' => ProductDetail::class,
+            'data_class' => Register::class,
         ]);
     }
 }

@@ -1,23 +1,23 @@
 <?php
 
-namespace App\Repository;
+namespace App\Repository\Product;
 
-use App\Entity\UserDetail;
+use App\Entity\Product\ProductDetail;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Doctrine\Persistence\ManagerRegistry;
 
 /**
- * @extends ServiceEntityRepository<UserDetail>
+ * @extends ServiceEntityRepository<ProductDetail>
  */
-class UserDetailRepository extends ServiceEntityRepository
+class ProductDetailRepository extends ServiceEntityRepository
 {
     public function __construct(ManagerRegistry $registry)
     {
-        parent::__construct($registry, UserDetail::class);
+        parent::__construct($registry, ProductDetail::class);
     }
 
     //    /**
-    //     * @return UserDetail[] Returns an array of UserDetail objects
+    //     * @return adminPanel[] Returns an array of adminPanel objects
     //     */
     //    public function findByExampleField($value): array
     //    {
@@ -31,7 +31,7 @@ class UserDetailRepository extends ServiceEntityRepository
     //        ;
     //    }
 
-    //    public function findOneBySomeField($value): ?UserDetail
+    //    public function findOneBySomeField($value): ?adminPanel
     //    {
     //        return $this->createQueryBuilder('u')
     //            ->andWhere('u.exampleField = :val')

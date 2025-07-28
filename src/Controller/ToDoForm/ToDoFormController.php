@@ -1,10 +1,10 @@
 <?php
 
-namespace App\Controller;
+namespace App\Controller\ToDoForm;
 
-use App\Entity\CRUD;
-use App\Form\CRUDType;
-use App\Repository\CRUDRepository;
+use App\Entity\CRUD\CRUD;
+use App\Form\CRUDForm\CRUDType;
+use App\Repository\CRUD\CRUDRepository;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;

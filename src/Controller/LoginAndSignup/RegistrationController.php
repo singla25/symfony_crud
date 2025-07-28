@@ -1,12 +1,12 @@
 <?php
 
-namespace App\Controller;
+namespace App\Controller\LoginAndSignup;
 
-use App\Entity\User;
-use App\Entity\UserDetail;
-use App\Form\RegistrationFormType;
+use App\Entity\LoginAndSignUpEntity\User;
+use App\Entity\LoginAndSignUpEntity\UserDetail;
+use App\Form\LoginAndSignUpForm\RegistrationFormType;
 use App\FormObject\Register;
-use App\Repository\UserRepository;
+use App\Repository\SignUpandLogin\UserRepository;
 use App\Security\EmailVerifier;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bridge\Twig\Mime\TemplatedEmail;

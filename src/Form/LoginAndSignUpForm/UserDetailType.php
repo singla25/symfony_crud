@@ -1,30 +1,27 @@
 <?php
 
-namespace App\Form;
+namespace App\Form\LoginAndSignUpForm;
 
-use App\Entity\CRUD;
+use App\Entity\LoginAndSignUpEntity\UserDetail;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 
-class CRUDType extends AbstractType
+class UserDetailType extends AbstractType
 {
     public function buildForm(FormBuilderInterface $builder, array $options): void
     {
         $builder
             ->add('name')
-            ->add('email')
-            ->add('age')
             ->add('address')
-            ->add('city')
-            ->add('pinCode')
+            ->add('phoneNumber')
         ;
     }
 
     public function configureOptions(OptionsResolver $resolver): void
     {
         $resolver->setDefaults([
-            'data_class' => CRUD::class,
+            'data_class' => UserDetail::class,
         ]);
     }
 }

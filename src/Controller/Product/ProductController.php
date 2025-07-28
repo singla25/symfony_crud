@@ -1,10 +1,10 @@
 <?php
 
-namespace App\Controller;
+namespace App\Controller\Product;
 
-use App\Entity\ProductDetail;
-use App\Form\ProductDetailType;
-use App\Repository\ProductDetailRepository;
+use App\Entity\Product\ProductDetail;
+use App\Form\ProductForm\ProductDetailType;
+use App\Repository\Product\ProductDetailRepository;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
